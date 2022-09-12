@@ -54,4 +54,11 @@ $z[0] = "MySQL";
 prueba();
 unset($a, $b, $c, $z); 
 
+echo "<h2>5. </h2>";
+$a = "7 personas";
+$b = (int) $a;
+$a = "9E3";
+$c = (double) $a;
+echo $a, "<br>", $b, "<br>", $a, "<br>", $c;
+unset($a,$b,$c);
 ?>
