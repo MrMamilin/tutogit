@@ -73,4 +73,13 @@ var_dump($a,$b,$c,$d,$e,$f);
 echo "<br>", (boolval($c) ? 'true' : 'false'), "\n";
 echo "<br>", (boolval($e) ? 'true' : 'false'), "\n";
 unset($a,$b,$c,$d,$e,$f);
+
+echo "<h2>7. </h2>";
+/*foreach($_SERVER as $nombre_campo => $valor){
+    $asignacion = "$" . $nombre_campo . "= . $valor . ";
+    echo "<br>" . $asignacion;
+  }*/
+  echo "<b>Versión de Apache y PHP:</b> ", $_SERVER['SERVER_SIGNATURE'];
+  echo "<br><b>Nombre del sistema operativo:</b> ", $_SERVER['HTTP_SEC_CH_UA_PLATFORM'];
+  echo "<br><br><b>Idioma del navegador:</b> ", $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 ?>
