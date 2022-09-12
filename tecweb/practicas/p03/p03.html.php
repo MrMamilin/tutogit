@@ -23,3 +23,15 @@ echo "<b>En esta segunda asignación, se imprime la variable a
 y b pasa a hacer una referencia a la variable.
 Por eso se imprime a 2 veces</b><br>", $a, "<br>", $b, "<br>", $c;
 unset($a, $b, $c);
+
+echo "<h2>3. </h2>";
+$a = "PHP5"; var_dump($a); echo "<br>";
+$z[] = &$a; var_dump($z); echo "<br>";
+$b = "5a version de PHP"; var_dump($b); echo "<br>";
+$c = $b*10; var_dump($c); echo "<br>"; //no se puede porque b es string
+$a .= $b; var_dump($a); echo "<br>";
+$b *= $c; var_dump($b); echo "<br>";//por ende está tampoco se puede realizar
+$z[0] = "MySQL"; var_dump($z);
+unset($a, $b, $c, $z);
+
+?>
