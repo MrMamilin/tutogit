@@ -118,6 +118,9 @@ figure{
     margin: auto;
     margin-top: 0px;
 }
+#titulo{
+    font: 20pt arial bold;
+}
 #info{
     font: 12pt arial;
     margin-left: 10px;
@@ -127,9 +130,37 @@ figure{
     float: right;
     margin-right: 10px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 .page{
     width: 250px;
     height: 25px;
     background-color: gray;
     display: block;
+}
+.prod{
+    width: 90%;
+    height: 440px;
+    /*background-color: green;*/
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+#imgprod{
+    display: block;
+}
+.desprod{
+    width: 35%;
+    height: 430px;
+    /*background-color: rgb(97, 55, 55);*/
+    display: block;
+    margin-left: 650px;
+    margin-top: -455px;
+}
+#precioprod{
+    font: 24pt arial bold;
+    margin-left: 10px;
+    margin-top: 30px;
 }
