@@ -40,7 +40,9 @@
         <p>
             R:
             <?php
-            // AQUÍ VA EL CÓDIGO DE SOLUCIÓN
+            $cont = $_POST['cont'];
+            $num = $_POST['num'];
+            echo genrepetitiva($cont, $num);
             ?>
         </p>
     </div>
