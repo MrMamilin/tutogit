@@ -9,27 +9,22 @@ function multiplo5y7($numero) {
     }
 }
 
-function genrepetitiva($cont, $num){
-    $_POST['num']=0;
-    $_POST['cont']=0;
-    $it= 100;
+function genrepetitiva($it){
+    $it= 1;
+    $cont=0;
     for($i=0; $i<$it; $i++){
-        $_POST['cont']++;
         for($j=0; $j<3; $j++){
             $array[$i][$j] = rand(1, 100);
-            if($array[$i][$j] % 2 == 0){
-                $_POST['num']++;
-                //$i++;
-            }
-            /*if(($array[$i][0]%2 && $array[$i][2]%2) == 1){//error
-                if($array[$i][1]%2 == 0){
-                    $i++;
-                    $num++;
-                }
-            }*/
+            //echo $array[$i][$j].', ';
+            $cont = ++$cont;
+        }
+        if($it>0){
+            $it = ++$it;}
+        if($array[$i][0]%2 == 1 && $array[$i][1]%2 == 0 && $array[$i][2]%2 == 1){//error
+            break;
         }
     }
-    return $_POST['num'].' numeros obtenidos en '.$_POST['cont'].' iteraciones';
+    return $cont.' numeros obtenidos en '.($it-1).' iteraciones';
 }
 
 ?>

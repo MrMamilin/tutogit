@@ -40,9 +40,8 @@
         <p>
             R:
             <?php
-            $cont = $_POST['cont'];
-            $num = $_POST['num'];
-            echo genrepetitiva($cont, $num);
+            $it=0;
+            echo genrepetitiva($it);
             ?>
         </p>
     </div>
