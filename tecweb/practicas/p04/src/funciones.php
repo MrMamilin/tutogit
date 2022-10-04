@@ -53,4 +53,11 @@ function randmultiplodowhile($numero){
     return 'Se encontró que el numero '.$array[$i].' es multiplo de '.$_GET['numero'];
 }
 
+function arrayindices(){
+    for($i=97; $i<123; $i++){
+        $indices[$i] = chr($i);
+    }
+    return $indices;
+}
+
 ?>

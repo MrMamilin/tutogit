@@ -77,7 +77,11 @@
         <p>
             R:
             <?php
-            // AQUÍ VA EL CÓDIGO DE SOLUCIÓN
+            echo '<table border=1>';
+            foreach(arrayindices() as $i => $value){
+                echo '<tr><td>'.$i.' => '.$value.'</td></tr>';
+            }
+            echo '</table>';
             ?>
         </p>
     </div>
