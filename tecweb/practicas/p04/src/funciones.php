@@ -27,4 +27,30 @@ function genrepetitiva($it){
     return $cont.' numeros obtenidos en '.($it-1).' iteraciones';
 }
 
+function randmultiplo($numero){
+    $i = 0;
+    $array[$i] = rand(1, 100);
+    while (($array[$i] % $_GET['numero']) != 0) {
+        $i++;
+        $array[$i] = rand(1, 100);
+        if($_GET['numero'] % $array[$i] == 0){
+            break;
+        }
+    }
+    return 'Se encontró que el numero '.$array[$i].' es multiplo de '.$_GET['numero'];
+}
+
+function randmultiplodowhile($numero){
+    $i = 0;
+    $array[$i] = rand(1, 100);
+    do {
+        $i++;
+        $array[$i] = rand(1, 100);
+        if($_GET['numero'] % $array[$i] == 0){
+            break;
+        }
+    } while (($array[$i] % $_GET['numero']) != 0);
+    return 'Se encontró que el numero '.$array[$i].' es multiplo de '.$_GET['numero'];
+}
+
 ?>

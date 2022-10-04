@@ -52,7 +52,14 @@
         <p>
             R:
             <?php
-            // AQUÍ VA EL CÓDIGO DE SOLUCIÓN
+            if (!empty($_GET['numero'])) {
+                $numero = $_GET['numero'];
+                echo '<strong>WHILE: </strong> '.randmultiplo($numero);
+                echo '<br>';
+                echo '<strong>DO-WHILE: </strong> '.randmultiplodowhile($numero);
+            } else {
+                echo '(vacío)';
+            }
             ?>
         </p>
     </div>
