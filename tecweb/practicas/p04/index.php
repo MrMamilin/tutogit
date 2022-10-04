@@ -97,9 +97,18 @@
         </p>
         <p>
             R:
-            <?php
-            // AQUÍ VA EL CÓDIGO DE SOLUCIÓN
-            ?>
+            <form id="formulario1" action="./src/script1.php" method="post">
+            <fieldset>
+                <legend>Información Personal</legend>
+                <ol>
+                <li><label>Edad:</label> <input type="text" name="edad"></li>
+                <li><label>Sexo (f o m):</label> <input type="text" name="sexo"></li>
+                </ol>
+            </fieldset>
+            <p>
+                <input type="submit" value="¡OK!">
+            </p>
+            </form>
         </p>
     </div>
     <div>

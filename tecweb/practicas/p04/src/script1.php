@@ -16,16 +16,30 @@
 		</style>
 	</head>
 	<body>
-		<h1>RESPUESTA</h1>
-
 		<?php
             $age = $_POST['edad'];
             $sex = $_POST['sexo'];
 
             if (!empty($age)&&!empty($sex)) {
-                echo '<p>Edad: '.$age.'<br>';
-                echo 'Sexo: '.$sex.'</p>';
+				if($age>=18 && $age<=35 && $sex =='f'){
+					echo '<h1>BIENVENIDA, USTED ESTA EN EL RANGO DE EDAD PERMITIDO</h1>';
+					echo '<p>Edad: '.$age.'<br>';
+                    echo 'Sexo: '.$sex.'</p>';
+					echo '<form action="../index.php"><input type="submit" value="regresar"></form>';
+				}
+                else{
+					echo '<body style="background-color:#cc5127"><h1 style="color:#cb2026">
+					ERROR! NO HA INGRESADO LOS DATOS BIEN.<br> POR FAVOR REVISE DE NUEVO</h1>';
+					echo '<p>Edad: '.$age.'<br>';
+                    echo 'Sexo: '.$sex.'</p>';
+					echo '<form action="../index.php"><input type="submit" value="regresar"></form></body>';
+				}
             }
+			else{
+				echo '<body style="background-color:#cc5127"><h1 style="color:#cb2026">
+				ERROR! NO HA INGRESADO NINGUN DATO</h1>';
+				echo '<form action="../index.php"><input type="submit" value="regresar"></form></body>';
+			}
         ?>
 	</body>
 </html>
