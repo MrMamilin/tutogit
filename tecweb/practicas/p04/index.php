@@ -130,16 +130,18 @@
         </p>
         <p>
             R:
-            <form id="formulario1" action="./src/script1.php" method="post">
+            <?php
+            echo parkcar();
+            ?>
+            <form id="formulario2" action="index.php" method="post">
             <fieldset>
-                <legend>Información Personal</legend>
+                <legend>Aparcamiento de vehiculos</legend>
                 <ol>
-                <li><label>Edad:</label> <input type="text" name="edad"></li>
-                <li><label>Sexo:</label> <input type="text" name="sexo"></li>
+                <li><label for="matricula">Matricula:</label> <input type="text" name="matricula"></li>
                 </ol>
             </fieldset>
             <p>
-                <input type="submit" value="¡OK!">
+                <input type="submit" value="Consultar" name="boton">
             </p>
             </form>
         </p>
