@@ -99,11 +99,9 @@
             <h1><strong>Registra un Producto</strong></h1>
             <br>
             <ul>
-                <li>Nombre: <input type="text" id="nombre" name="nombre" onblur="entradaNombre(this)" required
-                    value="<?= !empty($_POST['nombre']) ? $_POST['nombre'] : $_GET['nombre'] ?>"></li>
+                <li>Nombre: <input type="text" id="nombre" name="nombre" onblur="entradaNombre(this)" required></li>
                 <br>
-                <li>Marca: <select id="marca" name="marca" onchange="entradaMarca(this)"
-                    value="<?= !empty($_POST['marca']) ? $_POST['marca'] : $_GET['marca'] ?>">
+                <li>Marca: <select id="marca" name="marca" onchange="entradaMarca(this)">
                     <option selected="true" disabled="disabled">Opciones</option>
                     <option value="Xbox">Xbox</option>
                     <option value="Playstation">Playstation</option>
@@ -112,22 +110,17 @@
                     <option value="PSP">PSP</option>
                 </select></li>
                 <br>
-                <li>Modelo: <input type="text" id="modelo" name="modelo" onblur="entradaModelo(this)" required 
-                    value="<?= !empty($_POST['modelo']) ? $_POST['modelo'] : $_GET['modelo'] ?>"></li>
+                <li>Modelo: <input type="text" id="modelo" name="modelo" onblur="entradaModelo(this)" required></li>
                 <br>
-                <li>Precio: <input type="text" id="precio" name="precio" placeholder="$0.00" onchange="entradaPrecio(this)" required 
-                    value="<?= !empty($_POST['precio']) ? $_POST['precio'] : $_GET['precio'] ?>"></li>
+                <li>Precio: <input type="text" id="precio" name="precio" placeholder="$0.00" onchange="entradaPrecio(this)"></li>
                 <br>
                 <li>Detalles: <br>
                     <textarea name="detalles" rows="5" cols="40" id="detalles"
-                        placeholder="Limite de 250 caracteres (opcional)" onblur="entradaDetalles(this)" 
-                        value="<?php echo !empty($_POST['detalles']) ? $_POST['detalles'] : $_GET['detalles']; ?>"></textarea>
+                        placeholder="Limite de 250 caracteres (opcional)" onblur="entradaDetalles(this)"></textarea>
                     <br><br>
-                <li>Unidades: <input type="text" id="unidades" name="unidades" onblur="entradaUnidades(this)" required 
-                    value="<?= !empty($_POST['unidades']) ? $_POST['unidades'] : $_GET['unidades'] ?>"></li>
+                <li>Unidades: <input type="text" id="unidades" name="unidades" onblur="entradaUnidades(this)" required></li>
                 <br>
-                <li>Imagen: <input type="text" id="imagen" name="imagen" placeholder="img/nombre.png" onchange="entradaImagen(this)"
-                    value="<?= !empty($_POST['imagen']) ? $_POST['imagen'] : $_GET['imagen'] ?>"></li>
+                <li>Imagen: <input type="text" id="imagen" name="imagen" placeholder="img/nombre.png" onchange="entradaImagen(this)"></li>
                 <br>
             </ul>
             <input type="submit" id="btn" value="Validar">

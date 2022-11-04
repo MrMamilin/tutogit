@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 <?php
-if (isset($_GET['tope'])) {
-	$tope = $_GET['tope'];
+if (isset($_GET['eliminado'])) {
+	$eliminado = $_GET['eliminado'];
 } else {
-	die('Parámetro "tope" no detectado...');
+	die('Parámetro "eliminado" no detectado...');
 }
 
-if (!empty($tope)) {
+if (!empty($eliminado) || $eliminado==0) {
 	/** SE CREA EL OBJETO DE CONEXION */
 	@$link = new mysqli('localhost:3310', 'valdo', 'olvera21', 'marketzone2');
 
@@ -18,7 +18,7 @@ if (!empty($tope)) {
 	}
 
 	/** Crear una tabla que no devuelve un conjunto de resultados */
-	if ($result = $link->query("SELECT * FROM productos WHERE unidades <= $tope")) {
+	if ($result = $link->query("SELECT * FROM productos WHERE eliminado <= $eliminado")) {
 		$row = $result->fetch_all(MYSQLI_ASSOC);
 		/** útil para liberar memoria asociada a un resultado con demasiada información */
 		foreach ($row as $num => $registro) {            // Se recorren tuplas
