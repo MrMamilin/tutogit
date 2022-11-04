@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Form-Productos</title>
+    <title>Practica 7</title>
     <style type="text/css">
         ol,
         ul {
@@ -41,40 +41,86 @@
 
 <body>
     <script>
-        function validar(){
-            name=document.getElementById("nombre").value;
-            brand=document.getElementById("marca").value;
-            model=document.getElementById("modelo").value;
-            price=document.getElementById("precio").value;
-            details=document.getElementById("detalles").value;
-            units=document.getElementById("unidades").value;
-            image=document.getElementById("imagen").value;
-
-            if(name=='' || brand =='' || model=='' || price=='' || details=='' || units=='' || image==''){
-                alert("Favor de llenar todos los campos");
+        function entradaDatos(campo){
+            if(campo.value == ''){
+                alert('Favor de ingresar datos en los campos vacios');
+            }
+        }
+        function entradaNombre(campo){
+            if(campo.value.length > 100){
+                campo.focus();
+                alert('Solo puede ingresar 100 caracteres');
+                campo.value='';
+            }
+        }
+        function entradaMarca(campo){
+            if(campo.value == ''){
+                alert('Favor de elegir una marca de la lista');
+            }
+        }
+        function entradaModelo(campo){
+            if(campo.value.length > 25){
+                campo.focus();
+                alert('Solo puede ingresar 25 caracteres');
+                campo.value='';
+            }
+        }
+        function entradaPrecio(campo){
+            precio=parseFloat(campo.value);
+            if(precio <= 99.99){
+                campo.focus();
+                alert('El precio debe ser mayor a 99.99');
+                campo.value='';
+            }
+        }
+        function entradaDetalles(campo){
+            if(campo.value.length >250){
+                campo.focus();
+                alert('Solo puede ingresar 250 caracteres');
+                campo.value='';
+            }
+        }
+        function entradaUnidades(campo){
+            unidades=parseInt(campo);
+            if(unidades < 0){
+                campo.focus();
+                alert('Valor ingresado es invalido');
+                campo.value='';
+            }
+        }
+        function entradaImagen(campo){
+            if(campo.value == ''){
+                campo.value='img/image.png';
             }
         }
     </script>
     <div id="form">
-        <form method="POST" action="http://localhost:8008/tecnologiasweb/p06-base/set_productov2.php" onsubmit="return validar()">
+        <form method="POST" action="http://localhost:8008/tecnologiasweb/p07/set_productov2.php" onsubmit="return entradaDatos(campo)">
             <h1><strong>Registra un Producto</strong></h1>
             <br>
             <ul>
-                <li>Nombre: <input type="text" id="nombre" name="nombre"/></li>
+                <li>Nombre: <input type="text" id="nombre" name="nombre" onblur="entradaNombre(this)" required></li>
                 <br>
-                <li>Marca: <input type="text" id="marca" name="marca"/></li>
+                <li>Marca: <select id="marca" name="marca" onchange="entradaMarca(this)">
+                    <option selected="true" disabled="disabled">Opciones</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="Playstation">Playstation</option>
+                    <option value="Nintendo">Nintendo</option>
+                    <option value="Wii">Wii</option>
+                    <option value="PSP">PSP</option>
+                </select></li>
                 <br>
-                <li>Modelo: <input type="text" id="modelo" name="modelo"/></li>
+                <li>Modelo: <input type="text" id="modelo" name="modelo" onblur="entradaModelo(this)" required></li>
                 <br>
-                <li>Precio: <input type="text" id="precio" name="precio" placeholder="$0.00" /></li>
+                <li>Precio: <input type="text" id="precio" name="precio" placeholder="$0.00" onchange="entradaPrecio(this)"></li>
                 <br>
                 <li>Detalles: <br>
                     <textarea name="detalles" rows="5" cols="40" id="detalles"
-                        placeholder="Limite de 250 caracteres"></textarea>
+                        placeholder="Limite de 250 caracteres (opcional)" onblur="entradaDetalles(this)"></textarea>
                     <br><br>
-                <li>Unidades: <input type="text" id="unidades" name="unidades"/></li>
+                <li>Unidades: <input type="text" id="unidades" name="unidades" onblur="entradaUnidades(this)" required></li>
                 <br>
-                <li>Imagen: <input type="text" id="imagen" name="imagen" placeholder="img/nombre.png" /></li>
+                <li>Imagen: <input type="text" id="imagen" name="imagen" placeholder="img/nombre.png" onchange="entradaImagen(this)"></li>
                 <br>
             </ul>
             <input type="submit" id="btn" value="Validar">
