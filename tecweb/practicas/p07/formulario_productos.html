@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form-Productos</title>
+    <style type="text/css">
+        ol,
+        ul {
+            list-style-type: none;
+        }
+
+        #form {
+            font-family: Arial, sans-serif;
+            width: 30%;
+            background-color: rgb(178, 185, 248);
+            padding: 30px;
+            border: solid 3px;
+            border-color: rgb(50, 69, 104);
+            border-radius: 10px;
+        }
+
+        #btn{
+            width: auto;
+            height: auto;
+            font-size: 20px;
+            background-color: rgb(114, 112, 117);
+            color: white;
+            font-family: arial black;
+            border-radius: 15px;
+            border: none;
+            padding: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 130px;
+        }
+        #btn:hover{
+            background-color: rgb(18, 19, 19);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function validar(){
+            name=document.getElementById("nombre").value;
+            brand=document.getElementById("marca").value;
+            model=document.getElementById("modelo").value;
+            price=document.getElementById("precio").value;
+            details=document.getElementById("detalles").value;
+            units=document.getElementById("unidades").value;
+            image=document.getElementById("imagen").value;
+
+            if(name=='' || brand =='' || model=='' || price=='' || details=='' || units=='' || image==''){
+                alert("Favor de llenar todos los campos");
+            }
+        }
+    </script>
+    <div id="form">
+        <form method="POST" action="http://localhost:8008/tecnologiasweb/p06-base/set_productov2.php" onsubmit="return validar()">
+            <h1><strong>Registra un Producto</strong></h1>
+            <br>
+            <ul>
+                <li>Nombre: <input type="text" id="nombre" name="nombre"/></li>
+                <br>
+                <li>Marca: <input type="text" id="marca" name="marca"/></li>
+                <br>
+                <li>Modelo: <input type="text" id="modelo" name="modelo"/></li>
+                <br>
+                <li>Precio: <input type="text" id="precio" name="precio" placeholder="$0.00" /></li>
+                <br>
+                <li>Detalles: <br>
+                    <textarea name="detalles" rows="5" cols="40" id="detalles"
+                        placeholder="Limite de 250 caracteres"></textarea>
+                    <br><br>
+                <li>Unidades: <input type="text" id="unidades" name="unidades"/></li>
+                <br>
+                <li>Imagen: <input type="text" id="imagen" name="imagen" placeholder="img/nombre.png" /></li>
+                <br>
+            </ul>
+            <input type="submit" id="btn" value="Validar">
+        </form>
+    </div>
+</body>
+</html>
