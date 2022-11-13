@@ -8,6 +8,13 @@ var baseJSON = {
     "imagen": "img/default.png"
   };
 
+  function verNombre(nombre){
+    var existe=0;
+    if(nombre.value == '' || nombre.lenght >= 100){
+        existe=1;
+        alert('Escribe un nombre valido');
+    }
+  }
 // FUNCIÓN CALLBACK DE BOTÓN "Buscar"
 function buscarID(e) {
     /**
@@ -33,7 +40,7 @@ function buscarID(e) {
             let productos = JSON.parse(client.responseText);    // similar a eval('('+client.responseText+')');
             
             // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
-            if(Object.keys(productos).length > 0) {
+            //if(Object.keys(productos).length > 0) {
                 // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
                 let template = '';
                 for (let i = 0; i < Object.keys(productos).length; i++) {
@@ -56,7 +63,7 @@ function buscarID(e) {
                 }
                 // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
                 document.getElementById("productos").innerHTML = template;
-            }
+            //}
         }
     };
     client.send("id="+id);
@@ -70,10 +77,44 @@ function agregarProducto(e) {
     var productoJsonString = document.getElementById('description').value;
     // SE CONVIERTE EL JSON DE STRING A OBJETO
     var finalJSON = JSON.parse(productoJsonString);
+
+    var existe = 0;
+    /*if(nombre.value == '' || nombre.lenght >= 100){
+        existe=1;
+        alert('Escribe un nombre valido');
+    }*/
+    //verNombre(nombre);
+    if(finalJSON['precio']<99.99 ){
+        existe=1;
+        alert('Escribe un precio mayor a 99.99');
+    }
+    if(finalJSON['unidades']<=0 ){
+        existe=1;
+        alert('Escrbie la cantidad mayor a 0:');
+    }
+    if(finalJSON['modelo'] == ''){
+        existe=1;
+        alert('Escribe el modelo');
+    }
+    if(finalJSON['marca'] == ''){
+        existe=1;
+        alert('Escribe la marca');
+    }
+    if(finalJSON['detalles'].length > 250){
+        existe=1;
+        alert('Escribe los detalles (-250 caracteres)');
+    }
+    if(finalJSON['imagen'] == ''){
+        //existe=1;
+        finalJSON['imagen'] = 'img/default.png';
+    }
+
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
     // SE OBTIENE EL STRING DEL JSON FINAL
     productoJsonString = JSON.stringify(finalJSON,null,2);
+
+    
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
@@ -83,9 +124,13 @@ function agregarProducto(e) {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
             console.log(client.responseText);
+            window.alert(client.responseText);
         }
     };
-    client.send(productoJsonString);
+    if(existe == 0){
+        client.send(productoJsonString);
+    }
+    //client.send(productoJsonString);
 }
 
 // SE CREA EL OBJETO DE CONEXIÓN COMPATIBLE CON EL NAVEGADOR
