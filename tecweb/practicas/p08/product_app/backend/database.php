@@ -1,9 +1,9 @@
 <?php
     $conexion = @mysqli_connect(
-        'localhost',
-        'root',
-        '12345678a',
-        'marketzone'
+        'localhost:3310',
+        'valdo',
+        'olvera21',
+        'marketzone2'
     );
 
     /**
