@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+
+<cinefanatico>
+    <tarjeta noserie="123456789" visitas="93" puntos="179">
+        <nombre>Konan Nemia</nombre>
+        <correo>konan21@gmail.com</correo>
+        <telefono tipo="movil">222-234-9313</telefono>
+    </tarjeta>
+    <tarjeta noserie="223456789" visitas="23" puntos="45">
+        <nombre>Ana Lisa Menacho</nombre>
+        <correo>anali93@gmail.com</correo>
+        <telefono tipo="casa">222-323-5323</telefono>
+    </tarjeta>
+    <tarjeta noserie="333456789" visitas="3" puntos="6">
+        <nombre>Albertano Santa Cruz</nombre>
+        <correo>irapues123@gmail.com</correo>
+        <telefono tipo="movil">222-555-3245</telefono>
+    </tarjeta>
+</cinefanatico>
