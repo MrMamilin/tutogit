@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod2.dtd">
+<CatalogoVOD>
+    <cuenta correo="valdito212002@gmail.com">
+        <perfiles>
+            <perfil usuario="Antonio Estrella" idioma="Español" />
+            <perfil usuario="Bruno Díaz" idioma="Wakandiano" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Terror">
+                <titulo duracion="02:10:12">El oso Juancho</titulo>
+                <titulo duracion="66:66:66">El oso Juancho 2: Triunfó el mal</titulo>
+                <titulo duracion="02:03:45">El regreso del oso Juancho</titulo>
+                <titulo duracion="00:00:30">El entierro de la anaconda cabezona</titulo>
+            </genero>
+            <genero nombre="Ciencia Ficción">
+                <titulo duracion="01:35:20">Somos Cacahuates</titulo>
+                <titulo duracion="02:02:03">La Mafia del Poder</titulo>
+                <titulo duracion="2:49:20">RipeBear&apos;s</titulo>
+                <titulo duracion="01:59:53">Querida, encogí a los niños</titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Cartoon's">
+                <titulo duracion="00:23:13">Bob Toronja</titulo>
+                <titulo duracion="00:27:21">Regular show</titulo>
+                <titulo duracion="00:15:23">Ed, Edd y Eddie</titulo>
+                <titulo duracion="00:24:34">North Park</titulo>
+            </genero>
+            <genero nombre="Reality Show">
+                <titulo duracion="01:00:41">Cancún Shore</titulo>
+                <titulo duracion="02:19:00">Master Chief</titulo>
+                <titulo duracion="00:58:48">El tulipan de Xochitl</titulo>
+                <titulo duracion="01:29:30">Tuneame esta</titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
